@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="page-card glass-card">
+    <div class="card-heading">
+        <h2>README</h2>
+        <p>Project instructions and troubleshooting reference.</p>
+    </div>
+    <div class="readme-wrapper glass-panel">
+        <pre>{{ readme_text }}</pre>
+    </div>
+</section>
+{% endblock %}

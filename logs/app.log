@@ -1,0 +1,126 @@
+2026-07-27 18:23:56,539 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-27 18:23:56,539 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-27 18:24:07,955 | INFO | 127.0.0.1 - - [27/Jul/2026 18:24:07] "GET / HTTP/1.1" 200 -
+2026-07-27 18:24:08,019 | INFO | 127.0.0.1 - - [27/Jul/2026 18:24:08] "GET / HTTP/1.1" 200 -
+2026-07-27 18:24:08,173 | INFO | 127.0.0.1 - - [27/Jul/2026 18:24:08] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-07-27 18:24:08,174 | INFO | 127.0.0.1 - - [27/Jul/2026 18:24:08] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-07-27 18:24:18,019 | ERROR | Unexpected API error during prediction: 'LogisticRegression' object has no attribute 'multi_class'
+Traceback (most recent call last):
+  File "C:\Users\Imsxm\Downloads\Compressed\FakeNewsDetection_Source\FakeNewsDetection\app.py", line 111, in api_predict
+    result = predictor.predict(news_text).to_dict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Imsxm\Downloads\Compressed\FakeNewsDetection_Source\FakeNewsDetection\predict.py", line 69, in predict
+    probabilities = self._model.predict_proba(features)[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Imsxm\Downloads\Compressed\FakeNewsDetection_Source\FakeNewsDetection\venv\Lib\site-packages\sklearn\linear_model\_logistic.py", line 1423, in predict_proba
+    ovr = self.multi_class in ["ovr", "warn"] or (
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'LogisticRegression' object has no attribute 'multi_class'
+2026-07-27 18:24:18,019 | INFO | 127.0.0.1 - - [27/Jul/2026 18:24:18] "[35m[1mPOST /api/predict HTTP/1.1[0m" 500 -
+2026-07-27 18:24:31,056 | INFO | 127.0.0.1 - - [27/Jul/2026 18:24:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-07-27 18:24:31,084 | INFO | 127.0.0.1 - - [27/Jul/2026 18:24:31] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-07-27 18:39:35,096 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-27 18:39:35,096 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-27 18:39:44,124 | INFO | 127.0.0.1 - - [27/Jul/2026 18:39:44] "GET / HTTP/1.1" 200 -
+2026-07-27 18:39:44,178 | INFO | 127.0.0.1 - - [27/Jul/2026 18:39:44] "GET / HTTP/1.1" 200 -
+2026-07-27 18:39:44,311 | INFO | 127.0.0.1 - - [27/Jul/2026 18:39:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-07-27 18:39:44,318 | INFO | 127.0.0.1 - - [27/Jul/2026 18:39:44] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-07-27 18:39:58,629 | INFO | 127.0.0.1 - - [27/Jul/2026 18:39:58] "POST /api/predict HTTP/1.1" 200 -
+2026-07-27 18:42:25,391 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-27 18:42:25,391 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-27 18:42:37,647 | INFO | 127.0.0.1 - - [27/Jul/2026 18:42:37] "GET / HTTP/1.1" 200 -
+2026-07-27 18:42:37,697 | INFO | 127.0.0.1 - - [27/Jul/2026 18:42:37] "GET / HTTP/1.1" 200 -
+2026-07-27 18:42:37,813 | INFO | 127.0.0.1 - - [27/Jul/2026 18:42:37] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-07-27 18:42:37,814 | INFO | 127.0.0.1 - - [27/Jul/2026 18:42:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-07-27 18:43:13,187 | INFO | 127.0.0.1 - - [27/Jul/2026 18:43:13] "POST /api/predict HTTP/1.1" 200 -
+2026-07-27 18:43:21,920 | INFO | 127.0.0.1 - - [27/Jul/2026 18:43:21] "GET /predict HTTP/1.1" 200 -
+2026-07-27 18:43:21,965 | INFO | 127.0.0.1 - - [27/Jul/2026 18:43:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-07-27 18:43:21,966 | INFO | 127.0.0.1 - - [27/Jul/2026 18:43:21] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-07-27 18:43:23,733 | INFO | 127.0.0.1 - - [27/Jul/2026 18:43:23] "GET / HTTP/1.1" 200 -
+2026-07-27 18:43:23,760 | INFO | 127.0.0.1 - - [27/Jul/2026 18:43:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-07-27 18:43:23,761 | INFO | 127.0.0.1 - - [27/Jul/2026 18:43:23] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-07-27 18:43:59,062 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-27 18:43:59,062 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-27 18:45:49,749 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-27 18:45:49,749 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-27 18:45:51,355 | INFO | 127.0.0.1 - - [27/Jul/2026 18:45:51] "GET / HTTP/1.1" 200 -
+2026-07-27 18:45:51,478 | INFO | 127.0.0.1 - - [27/Jul/2026 18:45:51] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-07-27 18:45:51,481 | INFO | 127.0.0.1 - - [27/Jul/2026 18:45:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 14:53:08,678 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-12 14:53:08,679 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-12 14:53:58,200 | INFO | 127.0.0.1 - - [12/Aug/2026 14:53:58] "GET / HTTP/1.1" 200 -
+2026-08-12 14:53:58,292 | INFO | 127.0.0.1 - - [12/Aug/2026 14:53:58] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-08-12 14:53:58,292 | INFO | 127.0.0.1 - - [12/Aug/2026 14:53:58] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-08-12 14:53:58,708 | INFO | 127.0.0.1 - - [12/Aug/2026 14:53:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 14:53:58,710 | INFO | 127.0.0.1 - - [12/Aug/2026 14:53:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-12 14:54:28,682 | INFO | 127.0.0.1 - - [12/Aug/2026 14:54:28] "GET / HTTP/1.1" 200 -
+2026-08-12 14:54:28,692 | INFO | 127.0.0.1 - - [12/Aug/2026 14:54:28] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-08-12 14:54:28,692 | INFO | 127.0.0.1 - - [12/Aug/2026 14:54:28] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-08-12 14:54:28,721 | INFO | 127.0.0.1 - - [12/Aug/2026 14:54:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-12 14:56:09,484 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-12 14:56:09,484 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-12 14:56:46,439 | INFO | 127.0.0.1 - - [12/Aug/2026 14:56:46] "GET / HTTP/1.1" 200 -
+2026-08-12 14:56:46,450 | INFO | 127.0.0.1 - - [12/Aug/2026 14:56:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 14:56:46,455 | INFO | 127.0.0.1 - - [12/Aug/2026 14:56:46] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 17:11:17,496 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:17] "GET /predict HTTP/1.1" 200 -
+2026-08-12 17:11:17,504 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 17:11:17,504 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:17] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 17:11:18,628 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:18] "GET / HTTP/1.1" 200 -
+2026-08-12 17:11:18,635 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 17:11:18,636 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:18] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 17:11:20,064 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:20] "GET /readme HTTP/1.1" 200 -
+2026-08-12 17:11:20,071 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 17:11:20,072 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:20] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 17:11:44,564 | WARNING | API prediction warning: Model files are missing. Run setup_project.bat or train.py to generate model.pkl and vectorizer.pkl.
+2026-08-12 17:11:44,565 | INFO | 127.0.0.1 - - [12/Aug/2026 17:11:44] "[31m[1mPOST /api/predict HTTP/1.1[0m" 400 -
+2026-08-12 20:57:14,861 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:14] "GET /predict HTTP/1.1" 200 -
+2026-08-12 20:57:14,868 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 20:57:14,868 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:14] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 20:57:16,462 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:16] "GET /about HTTP/1.1" 200 -
+2026-08-12 20:57:16,467 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 20:57:16,467 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:16] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 20:57:17,641 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:17] "GET /readme HTTP/1.1" 200 -
+2026-08-12 20:57:17,648 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:17] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 20:57:17,648 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 20:57:22,591 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:22] "GET / HTTP/1.1" 200 -
+2026-08-12 20:57:22,596 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 20:57:22,597 | INFO | 127.0.0.1 - - [12/Aug/2026 20:57:22] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 20:58:05,336 | WARNING | API prediction warning: Model files are missing. Run setup_project.bat or train.py to generate model.pkl and vectorizer.pkl.
+2026-08-12 20:58:05,337 | INFO | 127.0.0.1 - - [12/Aug/2026 20:58:05] "[31m[1mPOST /api/predict HTTP/1.1[0m" 400 -
+2026-08-12 21:02:24,046 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-12 21:02:24,046 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-12 21:02:30,869 | INFO | 127.0.0.1 - - [12/Aug/2026 21:02:30] "GET / HTTP/1.1" 200 -
+2026-08-12 21:02:30,965 | INFO | 127.0.0.1 - - [12/Aug/2026 21:02:30] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 21:02:30,966 | INFO | 127.0.0.1 - - [12/Aug/2026 21:02:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 21:02:43,105 | INFO | 127.0.0.1 - - [12/Aug/2026 21:02:43] "GET / HTTP/1.1" 200 -
+2026-08-12 21:02:43,116 | INFO | 127.0.0.1 - - [12/Aug/2026 21:02:43] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 21:02:43,117 | INFO | 127.0.0.1 - - [12/Aug/2026 21:02:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 21:03:02,240 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:02] "POST /api/predict HTTP/1.1" 200 -
+2026-08-12 21:03:12,789 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:12] "GET /predict HTTP/1.1" 200 -
+2026-08-12 21:03:12,795 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 21:03:12,795 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:12] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 21:03:16,489 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:16] "GET / HTTP/1.1" 200 -
+2026-08-12 21:03:16,495 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 21:03:16,497 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:16] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 21:03:17,505 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:17] "GET /predict HTTP/1.1" 200 -
+2026-08-12 21:03:17,511 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 21:03:17,512 | INFO | 127.0.0.1 - - [12/Aug/2026 21:03:17] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 21:04:48,890 | INFO | 127.0.0.1 - - [12/Aug/2026 21:04:48] "POST /api/predict HTTP/1.1" 200 -
+2026-08-12 21:06:12,571 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-12 21:06:12,572 | INFO | [33mPress CTRL+C to quit[0m
+2026-08-12 21:06:28,749 | INFO | 127.0.0.1 - - [12/Aug/2026 21:06:28] "GET / HTTP/1.1" 200 -
+2026-08-12 21:06:28,762 | INFO | 127.0.0.1 - - [12/Aug/2026 21:06:28] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-08-12 21:06:28,763 | INFO | 127.0.0.1 - - [12/Aug/2026 21:06:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-12 21:06:39,696 | INFO | 127.0.0.1 - - [12/Aug/2026 21:06:39] "POST /api/predict HTTP/1.1" 200 -
+2026-08-13 10:58:04,558 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-13 10:58:04,558 | INFO | [33mPress CTRL+C to quit[0m

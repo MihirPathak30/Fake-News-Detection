@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="page-card glass-card error-page">
+    <div class="error-code">{{ status_code or 500 }}</div>
+    <h2>Something needs attention</h2>
+    <p>{{ error_message }}</p>
+    <a href="{{ url_for('home') }}" class="primary-button inline-button">Return Home</a>
+</section>
+{% endblock %}

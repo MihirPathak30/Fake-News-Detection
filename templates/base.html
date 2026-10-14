@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-orb orb-three"></div>
+
+    <div class="app-shell">
+        <aside class="sidebar glass-card">
+            <div class="brand-block">
+                <div class="brand-icon">AI</div>
+                <div>
+                    <h1>{{ app_title }}</h1>
+                    <p>Production-ready fake news intelligence</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="{{ url_for('home') }}" class="nav-link {% if active_page == 'home' %}active{% endif %}">Home</a>
+                <a href="{{ url_for('predict_page') }}" class="nav-link {% if active_page == 'prediction' %}active{% endif %}">Prediction</a>
+                <a href="{{ url_for('about_page') }}" class="nav-link {% if active_page == 'about' %}active{% endif %}">About</a>
+                <a href="{{ url_for('readme_page') }}" class="nav-link {% if active_page == 'readme' %}active{% endif %}">README</a>
+            </nav>
+
+            <div class="sidebar-footer glass-panel">
+                <span class="badge">Model</span>
+                <strong>TF-IDF + Logistic Regression</strong>
+                <p>Windows-friendly setup with automated training.</p>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

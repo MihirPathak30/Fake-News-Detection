@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero-section">
+    <div class="hero-copy glass-card">
+        <span class="section-tag">AI Powered Classification</span>
+        <h2>Detect whether a news article looks <span>real</span> or <span>fake</span> in seconds.</h2>
+        <p>Paste article content or upload a TXT file. The system preprocesses the text, applies TF-IDF vectorization, and predicts with a freshly trained Logistic Regression model.</p>
+    </div>
+
+    <div class="hero-metrics stats-grid">
+        <div class="stat-card glass-card">
+            <span>Accuracy</span>
+            <strong>{{ '%.2f%%'|format((metrics.accuracy or 0) * 100) if metrics else 'Not trained' }}</strong>
+        </div>
+        <div class="stat-card glass-card">
+            <span>F1 Score</span>
+            <strong>{{ '%.2f%%'|format((metrics.f1_score or 0) * 100) if metrics else 'Not trained' }}</strong>
+        </div>
+        <div class="stat-card glass-card">
+            <span>Samples</span>
+            <strong>{{ metrics.samples_used if metrics else 'Pending' }}</strong>
+        </div>
+        <div class="stat-card glass-card">
+            <span>Vocabulary</span>
+            <strong>{{ metrics.vocabulary_size if metrics else 'Pending' }}</strong>
+        </div>
+    </div>
+</section>
+
+<section class="workspace-grid">
+    <div class="glass-card form-card">
+        <div class="card-heading">
+            <h3>Prediction Workspace</h3>
+            <p>Use direct input or a plain TXT article file.</p>
+        </div>
+
+        <div id="messageBox" class="message-box {% if error_message %}error{% endif %} {% if not error_message %}hidden{% endif %}">
+            {{ error_message or '' }}
+        </div>
+
+        <form id="predictForm" action="{{ url_for('predict_page') }}" method="post" enctype="multipart/form-data" data-api-url="{{ url_for('api_predict') }}">
+            <label for="news_text" class="field-label">Typed News Content</label>
+            <textarea id="news_text" name="news_text" rows="11" placeholder="Paste a news article or statement here...">{{ input_text }}</textarea>
+
+            <div class="divider"><span>or</span></div>
+
+            <label for="news_file" class="upload-box">
+                <input id="news_file" type="file" name="news_file" accept=".txt,text/plain">
+                <span class="upload-title">Upload TXT file</span>
+                <small id="fileName">No file selected</small>
+            </label>
+
+            <div class="action-row">
+                <button type="submit" class="primary-button">Analyze News</button>
+                <button type="reset" class="secondary-button" id="resetButton">Clear</button>
+            </div>
+        </form>
+
+        <div id="loadingBox" class="loading-box hidden">
+            <div class="spinner"></div>
+            <p>Analyzing article with the trained model...</p>
+        </div>
+    </div>
+
+    <div id="resultCard" class="glass-card result-card {% if not result %}hidden{% endif %}">
+        <div class="card-heading">
+            <h3>Prediction Result</h3>
+            <p>Instant inference summary</p>
+        </div>
+
+        <div class="result-badge" id="resultLabel">{{ result.label if result else '' }}</div>
+
+        <div class="result-stats">
+            <div class="mini-stat glass-panel">
+                <span>Confidence</span>
+                <strong id="confidenceValue">{{ '%.2f%%'|format((result.confidence or 0) * 100) if result else '' }}</strong>
+            </div>
+            <div class="mini-stat glass-panel">
+                <span>Prediction Time</span>
+                <strong id="timeValue">{{ '%.2f ms'|format(result.prediction_time_ms) if result else '' }}</strong>
+            </div>
+            <div class="mini-stat glass-panel">
+                <span>Word Count</span>
+                <strong id="wordCountValue">{{ result.word_count if result else '' }}</strong>
+            </div>
+            <div class="mini-stat glass-panel">
+                <span>Model Used</span>
+                <strong id="modelValue">{{ result.model_used if result else '' }}</strong>
+            </div>
+        </div>
+
+        <div class="probability-group">
+            <div class="probability-row">
+                <div class="probability-header">
+                    <span>Real News Probability</span>
+                    <strong id="realProbabilityText">{{ '%.2f%%'|format((result.real_probability or 0) * 100) if result else '0.00%' }}</strong>
+                </div>
+                <div class="probability-track"><div id="realProbabilityBar" class="probability-fill probability-real" style="width: {{ ((result.real_probability or 0) * 100) if result else 0 }}%"></div></div>
+            </div>
+            <div class="probability-row">
+                <div class="probability-header">
+                    <span>Fake News Probability</span>
+                    <strong id="fakeProbabilityText">{{ '%.2f%%'|format((result.fake_probability or 0) * 100) if result else '0.00%' }}</strong>
+                </div>
+                <div class="probability-track"><div id="fakeProbabilityBar" class="probability-fill probability-fake" style="width: {{ ((result.fake_probability or 0) * 100) if result else 0 }}%"></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

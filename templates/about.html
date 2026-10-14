@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="page-card glass-card">
+    <div class="card-heading">
+        <h2>About the System</h2>
+        <p>A complete machine learning project built with Python 3.12, Flask, scikit-learn, pandas, nltk, and joblib.</p>
+    </div>
+
+    <div class="feature-grid">
+        <article class="feature-card glass-panel">
+            <h3>Training Pipeline</h3>
+            <p>The project merges True.csv and Fake.csv, preprocesses article content, extracts TF-IDF features, and trains a Logistic Regression classifier.</p>
+        </article>
+        <article class="feature-card glass-panel">
+            <h3>Prediction Modes</h3>
+            <p>Users can paste news content directly or upload a TXT file. The application returns a label, confidence, probability split, word count, and timing.</p>
+        </article>
+        <article class="feature-card glass-panel">
+            <h3>Reliability</h3>
+            <p>Friendly error messages cover missing models, missing datasets, unsupported uploads, empty input, and general server errors to avoid crashes.</p>
+        </article>
+    </div>
+
+    <div class="timeline-card glass-panel">
+        <h3>Workflow Overview</h3>
+        <ol class="timeline-list">
+            <li>Run <strong>setup_project.bat</strong> to create the virtual environment, install dependencies, download NLTK resources, and train the model.</li>
+            <li>Run <strong>run_project.bat</strong> to verify artifacts, launch Flask, and open the browser automatically.</li>
+            <li>Use the Prediction page to evaluate custom news text or TXT files.</li>
+        </ol>
+    </div>
+</section>
+{% endblock %}
